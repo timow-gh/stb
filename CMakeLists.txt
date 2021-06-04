@@ -51,7 +51,7 @@ set(stb_HEADERS
 add_library(stb INTERFACE)
 target_include_directories(stb INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/>)
 
-set(TARGET_ALIAS Stb)
+set(TARGET_ALIAS stb)
 add_library(${PROJECT_NAME}::${TARGET_ALIAS} ALIAS stb)
 set_target_properties(stb PROPERTIES EXPORT_NAME ${TARGET_ALIAS})
 
@@ -75,7 +75,7 @@ if (${PROJECT_NAME}_INSTALL_LIB)
         CACHE STRING "Path to install ${PROJECT_NAME}'s .cmake  module files to.")
 
     install(EXPORT StbTargetsExportSet
-            NAMESPACE Stb::
+            NAMESPACE stb::
             FILE StbTargets.cmake
             DESTINATION ${${PROJECT_NAME}_INSTALL_CMAKEDIR})
 
