@@ -53,11 +53,6 @@ target_include_directories(stb INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_
 
 set(TARGET_ALIAS stb)
 add_library(${PROJECT_NAME}::${TARGET_ALIAS} ALIAS stb)
-if (MSVC)
-    include(HelperFunctions)
-    setMSVCOutputDirectories(${TARGET_ALIAS})
-endif ()
-
 set_target_properties(stb PROPERTIES EXPORT_NAME ${TARGET_ALIAS})
 
 if (${PROJECT_NAME}_INSTALL_LIB)
